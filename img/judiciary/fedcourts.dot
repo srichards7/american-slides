@@ -1,0 +1,22 @@
+digraph fedcourts {
+        overlap=false
+        rankdir = BT
+        supreme [shape=box, label="U.S. Supreme Court"]
+        numappeals [shape=box, label="U.S. Courts of Appeals\n(1st-11th Circuits)"]
+        dcappeals [shape=box, label="U.S. Court of Appeals for\nthe D.C. Circuit"]
+        fedappeals [shape=box, label="U.S. Court of Appeals for\nthe Federal Circuit"]
+        distct [shape=box, label="U.S. District Courts\n(other than D.C.)"]
+        distctdc [shape=box, label="U.S. District Court\n(D.C.)"]
+        specct [shape=box, label="Specialized Courts\n(Patents, Trade, etc.)"]
+        
+        statesupreme [shape=box, label="State, Puerto Rico\nSupreme Courts"]
+
+        numappeals -> supreme
+        dcappeals -> supreme
+        fedappeals -> supreme
+        statesupreme -> supreme
+
+        distct -> numappeals
+        distctdc -> dcappeals
+        specct -> fedappeals
+}

@@ -1,0 +1,17 @@
+graph fedcourts {
+        supreme [label="U.S. Supreme Court"]
+        numappeals [label="U.S. Courts of Appeals (1st-11th Circuits)"]
+        dcappeals [label="U.S. Court of Appeals for the DC Circuit"]
+        fedappeals [label="U.S. Court of Appeals for the Federal Circuit"]
+        distct [label="U.S. District Courts (other than D.C.)"]
+        distctdc [label="U.S. District Court (D.C.)"]
+        
+        statesupreme [label="State, PR Supreme Courts"]
+
+        supreme -- numappeals
+        supreme -- dcappeals
+        supreme -- fedappeals
+        supreme -- statesupreme
+        numappeals -- distct
+        dcappelas -- distctdc
+}

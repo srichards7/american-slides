@@ -1,0 +1,19 @@
+digraph model {
+        overlap=false;
+        rankdir=TB;
+        
+        agenda [shape=box, label="Agenda Setting"];
+        form [shape=box, label="Policy Formulation"];
+        adopt [shape=box, label="Policy Adoption"];
+        impl [shape=box, label="Policy Implementation"];
+        eval [shape=box, label="Policy Evaluation"];
+        
+        agenda -> form;
+        form -> adopt;
+        adopt -> impl;
+        impl -> eval;
+        
+        eval -> agenda [style=dotted];
+        eval -> form [style=dotted];
+        eval -> impl [style=dotted];
+}
