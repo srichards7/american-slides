@@ -36,7 +36,12 @@
 
 .reveal section table { border-collapse: collapse }
 
-.reveal table tr:last-child td { border-bottom: 1px solid }
+.reveal table tbody tr:last-child td { border-bottom: 1px solid }
+.reveal table tbody tr:first-child td { border-top: 1px solid }
 
-.reveal section table td { text-align: center }
+.reveal table tbody td, .reveal table thead td { text-align: center }
 
+.reveal ul.twocolumn { columns: 2; -webkit-columns: 2; -moz-columns: 2;
+                       list-style: none; }
+
+.reveal ul { display: block; }
