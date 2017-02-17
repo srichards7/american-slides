@@ -20,7 +20,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -422,7 +429,7 @@
       <li class=fragment><p>Review by Senate Judiciary Committee.</p></li>
       <li class=fragment><p>Confirmation vote by full Senate.</p></li>
     </ul>
-  </li> 
+  </li>
 </ul>
 </section>
 

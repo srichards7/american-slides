@@ -17,7 +17,14 @@
 <!-- For syntax highlighting -->
 <link href="lib/css/zenburn.css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -237,7 +244,7 @@
   <li><p>Groups are often founded by a small group of <b>interest
         group entrepeneurs</b> who see a need for their interest to be
         advanced.</p></li>
-  
+
   <li class=fragment><p>Ideological/political groups often rely on the
       support of <b>patrons</b> to provide resources to reach
       potential members.</p></li>

@@ -20,7 +20,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -196,14 +203,14 @@ jurisdiction the <em>equal protection</em> of the laws.”</p>
 <ul>
   <li class=fragment><p><em>Prior restraint</em> is almost always
       unconstitutional.</p></li>
-  
+
   <li class=fragment><p>Unpopular opinions historically less
       tolerated:</p>
 
     <ul>
       <li><em>Schenck v. United States</em> (1917) and the “clear and
           present” danger doctrine.</li>
-      
+
       <li class=fragment><em>Brandenburg v. Ohio</em> (1969): narrower
           &ldquo;imminent lawless action&rdquo; standard.</li>
     </ul>
@@ -303,7 +310,7 @@ jurisdiction the <em>equal protection</em> of the laws.”</p>
   <li class=fragment><p><em>Commercial speech</em>.</p></li>
 
   <li class=fragment><p><em>Campaign-related speech</em>.</p></li>
-  
+
   <li class=fragment><p><em>Libel</em> (but higher standard for
       &ldquo;public figures.&rdquo;).</p></li>
 
@@ -415,9 +422,9 @@ recent cases.
       (see <a title="Guidance on Constitutionally Protected Prayer in
       Public Elementary and Secondary Schools" href="http://www2.ed.gov/policy/gen/guid/religionandschools/prayer_guidance.html">U.S. Department
       of Education website</a> for details):</p>
-    
+
     <ul>
-      
+
       <li class=fragment><p>Officials and employees cannot lead
           prayers.</p></li>
       <li class=fragment><p>Schools cannot facilitate “student led” prayer
@@ -477,7 +484,7 @@ recent cases.
     v. Yoder</em> (1972):</p>
 
 <ul>
-  
+
   <li class=fragment>Is there a <em>sincere</em> religious belief?</li>
 
   <li class=fragment>Does the law create a <em>substantial
@@ -518,7 +525,7 @@ recent cases.
 
     <li class=fragment><p>Some (but not all) states have also passed
         &ldquo;mini-RFRAs.&rdquo;</p>
-    
+
   </ul>
 </section>
 
@@ -547,10 +554,10 @@ recent cases.
       in <em>D.C. v. Heller</em> (2008).</li>
 
   <li class=fragment>Incorporated by <em>McDonald v. Chicago</em> (2010).</li>
-  
+
   <li class=fragment>Like other rights, subject to limitations.</li>
-</ul>    
-      
+</ul>
+
 </section>
 
 <section>
@@ -599,7 +606,7 @@ recent cases.
      style="float: right; width: 30%"><em>Bowers v. Hardwick</em>
      (1986) allowed Georgia to prosecute a man caught engaging in sex
      with another man.</p></li>
-  
+
   <li class=fragment><p>Supreme Court reversed itself in <em>Lawrence
       v. Texas</em> (2003), a virtually identical case.</p></li>
 
@@ -793,7 +800,7 @@ torture were still accepted in some states.</p></li>
 
   <li class=fragment>
     <p><img src="img/civil-lib/Singchair.jpg"
-            alt="Electric chair formerly used by New York State." 
+            alt="Electric chair formerly used by New York State."
             style="float: right; width: 25%"><em>Atkins v. Virginia</em>
       (2002) forbade execution of the mentally handicapped.</p></li>
 

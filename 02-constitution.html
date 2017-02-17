@@ -20,7 +20,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print"/>
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -93,9 +100,9 @@ style="float: right; width: 30%; height: auto">
       <li class="fragment"><p>Hence people formed a <b>social
       contract</b>.</p></li>
   </ul></li>
-  
+
   <li class="fragment"><p>Hobbes was a monarchist, not a republican.</p></li>
-  
+
 </ul>
 
 </section>
@@ -144,7 +151,7 @@ style="float: right; width: 30%; height: auto">
 
     <li><p>Locke also argued government should protect individuals'
         natural rights to &ldquo;life, liberty, and property.&rdquo;</p></li>
-    
+
     <li class=fragment><p>Revolution might be justified if government failed to
         secure those rights.</p></li>
   </ul>
@@ -164,10 +171,10 @@ style="float: right; width: 30%; height: auto">
   <li><p>Colonists were asked to help with cost of keeping troops in
       colonies after the French and Indian War (also known as the
       <i>Seven Years' War</i> in Europe).</p></li>
-  
+
   <li class=fragment><p>1765, imposition of the Stamp Tax on the
   colonies:</p>
-    
+
     <ul>
       <li class=fragment><p>Already in use in Britain, where taxes
         were higher than in the colonies</p>
@@ -308,7 +315,7 @@ style="float: right; width: 30%; height: auto">
   <img src="img/constitution/United_States_1789-03-1789-08.png"
        alt="Map of the United States circa 1789." style="height: auto;
        width: 80%">
-  
+
 </section>
 
 <section>
@@ -622,7 +629,7 @@ style="float: right; width: 30%; height: auto">
   defined.</p></li>
 
   <li class=fragment><p>The Electoral College.</p></li>
-  
+
   <li class=fragment><p>Did not guarantee basic liberties in the states.</p></li>
   <li class=fragment><p>Shortfalls related to the need for ratification:</p>
     <ul>

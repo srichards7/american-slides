@@ -15,7 +15,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print"/>
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <!--
@@ -205,10 +212,10 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
               did not cause the killing of Trayvon Martin in 2012.</p></li>
         </ul>
       </li>
-      
+
       <li class=fragment><p>we must rule out the other factors that
           may have affected the outcome.</p></li>
-      
+
     </ul>
   </li>
 

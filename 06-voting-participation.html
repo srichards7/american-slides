@@ -17,7 +17,14 @@
 <!-- For syntax highlighting -->
 <link href="lib/css/zenburn.css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -211,7 +218,7 @@ aside from SES:</p>
   <li class="fragment"><p>Parties allocate delegates to states and territories
       using complex formulas, including party support and
       population.</p></li>
-  
+
   <li class="fragment"><p>Minor parties tend to use <i>state
       conventions</i> to choose delegates to national
       convention.</p></li>
@@ -418,7 +425,7 @@ Census." src="img/voting/Electoral_College_2012.svgz" style="width:
   <li><p>Senators elected statewide (“at large”) since
       ratification of <b>17th Amendment</b>; only face reelection
       every six years.</p></li>
-  
+
   <li class="fragment"><p>House members elected from <i>districts</i> every two years (except in small states with only one seat, where they too are
       elected “at large”).
 

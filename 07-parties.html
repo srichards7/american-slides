@@ -17,7 +17,14 @@
 <!-- For syntax highlighting -->
 <link href="lib/css/zenburn.css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -201,7 +208,7 @@
 
   <li class="fragment"><p>Examples: former U.S. Representative Ron
   Paul (R-Texas) and his son, U.S. Senator Rand Paul (R-Ky.).</p></li>
-  
+
 </ul>
 
 </section>
@@ -218,7 +225,7 @@
 
     <li><p><b>Anti-fusion</b> and <b>sore loser</b> laws make it harder
         for minor parties to nominate popular candidates.</p></li>
-    
+
     <li class=fragment><p>The <b>Australian ballot</b> means minor
         parties face difficulty <i>qualifying</i> their candidates for
         the ballot.</p>
@@ -634,7 +641,7 @@
 
 <ul>
   <li><p>Others have argued that parties are <i>too strong</i>.</p></li>
-  
+
   <li class="fragment"><p>Drawbacks of strong parties:</p>
     <ul>
       <li class="fragment"><p>Do not always deliver on their promises.</p></li>
@@ -672,7 +679,7 @@
 
       <li class="fragment"><p>Campaign finance reform has limited
           party spending on campaigns.</p></li>
-      
+
       <li class="fragment"><p>Voters have fewer ties to local parties
           due to redistricting, population mobility.</p></li>
     </ul>

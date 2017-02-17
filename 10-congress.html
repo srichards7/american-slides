@@ -20,7 +20,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -143,11 +150,11 @@
      style="float: right; width: 30%; background-color: #fff">
 <p>Every ten years, <b>reapportionment</b> of House districts
         between states takes place after the Census.</p></li>
-    
+
     <li class=fragment><p>State legislatures then engage
         in <b>redistricting</b> to assign district
         boundaries.</p></li>
-    
+
     <li class=fragment><p><b>Gerrymandering</b> is often used to
         create districts that favor a particular party or bloc of
         voters.</p></li>

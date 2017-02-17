@@ -19,7 +19,14 @@
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<link rel="stylesheet" href="css/print/paper.css" media="print">
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
@@ -225,7 +232,7 @@ accused of crimes.</p>
 <li><p>Powers as <i>head of state</i>.</p>
 <ul>
   <li class=fragment><p>Meets with foreign heads of state and
-      government.</p></li> 
+      government.</p></li>
   <li class=fragment><p>Receives ambassadors from other countries.</p></li>
 </ul>
 </ul>
@@ -310,7 +317,7 @@ and recommend new laws to Congress (Richard Neustadt).</p>
 <!-- XXX Add slides on
 
      Presidential power over time.
-     Presidential popularity - cycle. 
+     Presidential popularity - cycle.
      Honeymoon effects etc.
 
 -->
