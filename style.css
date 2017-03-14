@@ -49,9 +49,9 @@
 /* Move audio controls to navigation area. Stolen from 
  * https://github.com/rajgoel/reveal.js-plugins/
  */
-.reveal section audio[data-timepoints] {
+.reveal section audio {
     width: 50%; height: 75px; position: fixed; left: 25%; bottom: 4px;
     z-index: 33; opacity: 0.75;
 }
 
-.reveal section audio[data-timepoints]:hover { opacity: 1; }
+.reveal section audio:hover { opacity: 1; }
