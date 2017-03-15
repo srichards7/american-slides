@@ -33,7 +33,59 @@ function revealSlide(e) {
     }
 
     var where = Reveal.getIndices();
-    Reveal.slide(where.h, where.v, fragment);
+    if(where.f != fragment)
+        Reveal.slide(where.h, where.v, fragment);
+}
+
+function disableAutoplay(ob) {
+    var audioelements = document.getElementsByTagName('audio')
+    if(!audioelements) return;
+
+    for(var i=0; i<audioelements.length; i++) {
+        /* Use dataset since reveal.js uses data-autoplay, not autoplay */
+        delete audioelements[i].dataset.autoplay;
+    }
+    
+    if(!ob)
+        ob = document.getElementById('narrationToggle')
+    if(!ob)
+        return;
+
+    ob.innerHTML = 'Enable Narration';
+}
+
+function enableAutoplay(ob) {
+    var audioelements = document.getElementsByTagName('audio')
+    if(!audioelements) return;
+
+    for(var i=0; i<audioelements.length; i++) {
+        /* Use dataset since reveal.js uses data-autoplay, not autoplay */
+        audioelements[i].dataset.autoplay = "autoplay";
+    }
+
+    if(!ob)
+        ob = document.getElementById('narrationToggle')
+    if(!ob)
+        return;
+    
+    ob.innerHTML = 'Disable Narration';
+}
+
+function autoplayOn() {
+    var audioelements = document.getElementsByTagName('audio')
+    if(!audioelements) return false;
+
+    /* Assume they're all in the same state for simplicity's sake... */
+    return ('autoplay' in audioelements[0].dataset);
+}
+
+function toggleAutoplay(ob) {
+    var enabled = autoplayOn();
+
+    if(enabled)
+        disableAutoplay(ob);
+    else
+        enableAutoplay(ob);
 }
 
 var audioelements = document.getElementsByTagName('audio')
@@ -59,3 +111,22 @@ for(var i=0; i<audioelements.length; i++) {
     // Add our event trigger to each audio element
     audioelements[i].addEventListener('timeupdate', revealSlide, false);
 }
+
+// Disable autoplay in overview mode; reenable when exiting if was on already
+var initialAutoplayState;
+Reveal.addEventListener('overviewshown', function(event) {
+    initialAutoplayState = autoplayOn();
+    disableAutoplay();
+    var audio = event.currentSlide.getElementsByTagName('audio');
+    if(audio[0])
+        audio[0].pause();
+}, false );
+
+Reveal.addEventListener('overviewhidden', function(event) {
+    if(initialAutoplayState) {
+        enableAutoplay();
+        var audio = event.currentSlide.getElementsByTagName('audio');
+        if(audio[0])
+            audio[0].play();
+    }
+}, false);
