@@ -51,7 +51,7 @@ function disableAutoplay(ob) {
     if(!ob)
         return;
 
-    ob.innerHTML = '🔊 Enable Narration';
+    ob.innerHTML = '🔇 Enable Narration';
 }
 
 function enableAutoplay(ob) {
@@ -68,7 +68,7 @@ function enableAutoplay(ob) {
     if(!ob)
         return;
     
-    ob.innerHTML = '🔇 Disable Narration';
+    ob.innerHTML = '🔊 Disable Narration';
 }
 
 function autoplayOn() {
