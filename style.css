@@ -1,7 +1,7 @@
 /* CSS overrides */
 
 @media print {
-    h5#narrationToggle, audio { display: none }
+    #narrationToggle, .reveal section audio { display: none }
 }
 
 /* Override image margins from global stylesheet */
