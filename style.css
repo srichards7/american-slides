@@ -2,6 +2,9 @@
 
 @media print {
     #narrationToggle, .reveal section audio { display: none }
+
+    /* Fix bug in reveal.js */
+    .reveal .slides { transform: none !important }
 }
 
 /* Override image margins from global stylesheet */
@@ -39,7 +42,7 @@
 .reveal table tbody tr:last-child td { border-bottom: 1px solid }
 .reveal table tbody tr:first-child td { border-top: 1px solid }
 
-.reveal table tbody td, .reveal table thead td { text-align: center }
+.reveal table tbody td, .reveal table thead td, .reveal table tbody th, .reveal table thead th { text-align: center }
 
 .reveal ul.twocolumn { columns: 2; -webkit-columns: 2; -moz-columns: 2;
                        list-style: none; }
@@ -51,7 +54,7 @@
  */
 .reveal section audio {
     width: 50%; height: 75px; position: fixed; left: 25%; bottom: 4px;
-    z-index: 33; opacity: 0.75;
+    z-index: 33; opacity: 0.75; display: block;
 }
 
 .reveal section audio:hover { opacity: 1; }

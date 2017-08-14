@@ -33,8 +33,9 @@ function revealSlide(e) {
     }
 
     var where = Reveal.getIndices();
+    console.log(where.f, fragment, element.currentTime, transtime);
     if(where.f != fragment)
-        Reveal.slide(where.h, where.v, fragment);
+        Reveal.navigateFragment(fragment);
 }
 
 function disableAutoplay(ob) {
@@ -88,29 +89,34 @@ function toggleAutoplay(ob) {
         enableAutoplay(ob);
 }
 
-var audioelements = document.getElementsByTagName('audio')
-
-for(var i=0; i<audioelements.length; i++) {
-    // Hack to remove the ogg/opus elements for Android Chrome
-    // only do this in Chrome versions <= 32
-    var alts = audioelements[i].getElementsByTagName('source')
+Reveal.addEventListener( 'ready', function( event ) {
+    // event.currentSlide, event.indexh, event.indexv
+    var audioelements = document.getElementsByTagName('audio')
     var androidRe = /Android/g
     var chromeRe = /Chrome\/([1-9]|[12][0-9]|3[012])\./g
-    var opusRe = /audio\/ogg; codecs=opus/g
+    
+    var isOldChrome = (androidRe.test(navigator.userAgent) &&
+                       chromeRe.test(navigator.userAgent))
 
-    if(androidRe.test(navigator.userAgent) &&
-       chromeRe.test(navigator.userAgent)) {
-        for(var j=0; j<alts.length; j++) {
-            if(opusRe.test(alts[j].type)) {
-                audioelements[i].removeChild(alts[j]);
-                j--;
+    for(var i=0; i<audioelements.length; i++) {
+        // Add our event trigger to each audio element
+        audioelements[i].addEventListener('timeupdate', revealSlide, false);
+
+        // Hack to remove the ogg/opus elements for Android Chrome
+        // only do this in Chrome versions <= 32
+        var opusRe = /audio\/ogg; codecs=opus/g
+
+        if(isOldChrome) {
+            var alts = audioelements[i].getElementsByTagName('source')
+            for(var j=0; j<alts.length; j++) {
+                if(opusRe.test(alts[j].type)) {
+                    audioelements[i].removeChild(alts[j]);
+                    j--;
+                }
             }
         }
     }
-
-    // Add our event trigger to each audio element
-    audioelements[i].addEventListener('timeupdate', revealSlide, false);
-}
+} );
 
 // Disable autoplay in overview mode; reenable when exiting if was on already
 var initialAutoplayState;
