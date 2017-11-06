@@ -38,6 +38,26 @@ function revealSlide(e) {
         Reveal.navigateFragment(fragment);
 }
 
+function hideAudio(ob) {
+    var audioelements = document.getElementsByTagName('audio')
+    if(!audioelements) return;
+
+    for(var i=0; i<audioelements.length; i++) {
+        /* Use dataset since reveal.js uses data-autoplay, not autoplay */
+        audioelements[i].style.display = "none";
+    }
+
+    /*
+    if(!ob)
+        ob = document.getElementById('narrationToggle')
+    if(!ob)
+        return;
+
+    ob.innerHTML = '🔇 Enable Narration';
+    */
+}
+
+
 function disableAutoplay(ob) {
     var audioelements = document.getElementsByTagName('audio')
     if(!audioelements) return;
@@ -45,6 +65,7 @@ function disableAutoplay(ob) {
     for(var i=0; i<audioelements.length; i++) {
         /* Use dataset since reveal.js uses data-autoplay, not autoplay */
         delete audioelements[i].dataset.autoplay;
+        audioelements[i].style.display = "none";
     }
     
     if(!ob)
@@ -62,6 +83,7 @@ function enableAutoplay(ob) {
     for(var i=0; i<audioelements.length; i++) {
         /* Use dataset since reveal.js uses data-autoplay, not autoplay */
         audioelements[i].dataset.autoplay = "autoplay";
+        audioelements[i].style.display = "block";
     }
 
     if(!ob)
