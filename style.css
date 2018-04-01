@@ -42,6 +42,9 @@
 .reveal table tbody tr:last-child td { border-bottom: 1px solid }
 .reveal table tbody tr:first-child td { border-top: 1px solid }
 
+.reveal table tbody tr:last-child th { border-bottom: 1px solid }
+.reveal table tbody tr:first-child th { border-top: 1px solid }
+
 .reveal table tbody td, .reveal table thead td, .reveal table tbody th, .reveal table thead th { text-align: center }
 
 .reveal ul.twocolumn { columns: 2; -webkit-columns: 2; -moz-columns: 2;
