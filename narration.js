@@ -120,6 +120,14 @@ Reveal.addEventListener( 'ready', function( event ) {
     var isOldChrome = (androidRe.test(navigator.userAgent) &&
                        chromeRe.test(navigator.userAgent))
 
+    // Hide the narration toggle if there is no narration available
+    if(audioelements.length == 0) {
+        ob = document.getElementById('narrationToggle')
+        if (ob) {
+            ob.style.display = "none";
+        }
+    }
+
     for(var i=0; i<audioelements.length; i++) {
         // Add our event trigger to each audio element
         audioelements[i].addEventListener('timeupdate', revealSlide, false);
