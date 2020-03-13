@@ -50,6 +50,10 @@
 .reveal ul.twocolumn { columns: 2; -webkit-columns: 2; -moz-columns: 2;
                        list-style: none; }
 
+.reveal ul.multicol { columns: 2; -webkit-columns: 2; -moz-columns: 2; }
+
+.reveal ul.multicol li { margin-left: 1em; }
+
 .reveal ul { display: block; }
 
 /* Move audio controls to navigation area. Stolen from 
